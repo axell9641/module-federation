@@ -1,4 +1,5 @@
 import {Component, ViewChild, ViewContainerRef, Inject, Injector, ComponentFactoryResolver, OnInit} from '@angular/core';
+import { AuthLibService } from 'auth-lib';
 
 @Component({
   selector: 'app-flights-search',
@@ -8,8 +9,9 @@ export class FlightsSearchComponent {
 
   @ViewChild('vc', { read: ViewContainerRef, static: true })
   viewContainer: ViewContainerRef;
-
+  user = this.service.user;
   constructor(
+    private service: AuthLibService,
     @Inject(Injector) private injector,
     @Inject(ComponentFactoryResolver) private cfr) { }
 
