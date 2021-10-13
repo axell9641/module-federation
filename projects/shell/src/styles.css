@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.text-highlight {
+  font-family: Lato;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 120%;
+  color: blueviolet;
+}
