@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthConfigModule } from './auth/auth-config.module';
 
 @NgModule({
   imports: [
     BrowserModule,
+    AuthConfigModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   declarations: [

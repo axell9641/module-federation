@@ -16,7 +16,7 @@ import { CustomStorage } from './custom-storage.service';
             silentRenew: true,
             silentRenewUrl: window.location.origin + '/silent-renew.html',
             renewTimeBeforeTokenExpiresInSeconds: 10,
-            storage: new CustomStorage() 
+            storage: new CustomStorage()
         }
       })],
     exports: [AuthModule],
