@@ -25,6 +25,16 @@ export const APP_ROUTES: Routes = [
     },
 
     {
+      path: 'identity',
+      loadChildren: () => 
+        loadRemoteModule({
+          remoteName: 'mfe2',
+          exposedModule: './Module'
+        })
+        .then(m => m.IdentityModule)
+    },
+
+    {
       path: '**',
       component: NotFoundComponent
     }

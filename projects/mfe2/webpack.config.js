@@ -5,7 +5,7 @@ const path = require("path");
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, '../../tsconfig.json'),
-  [/* mapped paths to share */]);
+  ['auth-lib']);
 
 module.exports = {
   output: {
@@ -24,18 +24,11 @@ module.exports = {
     new ModuleFederationPlugin({
       
         // For remotes (please adjust)
-        // name: "mfe2",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/mfe2/src/app/app.component.ts',
-        // },        
-        
-        // For hosts (please adjust)
-        // remotes: {
-        //     "shell": "shell@http://localhost:5000/remoteEntry.js",
-        //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
-
-        // },
+        name: "mfe2",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './projects/mfe2/src/app/identity/identity.module.ts',
+        }, 
 
         shared: {
           "@angular/core": { singleton: true, strictVersion: true }, 
