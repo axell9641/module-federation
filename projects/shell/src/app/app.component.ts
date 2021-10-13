@@ -8,6 +8,7 @@ import { AuthLibService } from 'auth-lib';
 })
 export class AppComponent implements OnInit {
   title = 'shell';
+  isAuthenticated = false;
 
   constructor(
     private service: AuthLibService,
@@ -18,6 +19,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken }) => {
       //
+      this.isAuthenticated = isAuthenticated;
     });
+  }
+
+  onLogout(event: any): void {
+    event.preventDefault();
+    this.oidcSecurityService.logoff();
   }
 }
