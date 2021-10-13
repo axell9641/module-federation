@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IdentitiesService, ListIdentitiesResponse } from '../services/identities.service';
 
 @Component({
   selector: 'app-identity-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./identity-list.component.scss']
 })
 export class IdentityListComponent implements OnInit {
-
-  constructor() { }
+  result: ListIdentitiesResponse;
+  constructor(private indetityService: IdentitiesService) { }
 
   ngOnInit(): void {
+    this.indetityService.getIdentities('').subscribe (result => {
+      this.result = result;
+    });
   }
 
 }

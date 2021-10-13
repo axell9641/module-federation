@@ -32,7 +32,7 @@ module.exports = {
 
         shared: {
           "@angular/core": { singleton: true, strictVersion: true }, 
-          "@angular/common": { singleton: true, strictVersion: true }, 
+          "@angular/common": { singleton: true, strictVersion: true , requiredVersion: '12.0.0'}, 
           "@angular/common/http": { singleton: true, strictVersion: true }, 
           "@angular/router": { singleton: true, strictVersion: true },
           "angular-auth-oidc-client": { singleton: true, strictVersion: true },
