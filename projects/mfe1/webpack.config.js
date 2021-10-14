@@ -37,6 +37,8 @@ module.exports = {
           "@angular/common/http": { singleton: true, strictVersion: true }, 
           "@angular/router": { singleton: true, strictVersion: true },
           "angular-auth-oidc-client": { singleton: true, strictVersion: true },
+          "@angular/cdk": { singleton: true, strictVersion: true },
+          "@angular/material": { singleton: true, strictVersion: true },
 
           ...sharedMappings.getDescriptors()
         }
