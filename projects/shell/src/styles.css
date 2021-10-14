@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .text-highlight {
   font-family: Lato;
   font-size: 1.8rem;
