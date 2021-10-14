@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'projects/mfe2/src/environments/environment';
 
@@ -24,6 +24,7 @@ export class IdentitiesService {
 
   getIdentities(userId: string) {
     //TODO usar userId del contexto
-    return this.http.get<ListIdentitiesResponse>(`${this.baseUrl}/identity?userId=${'1234567890'}`);
+    const headers = new HttpHeaders().set('user-id', '1234567890');
+    return this.http.get<ListIdentitiesResponse>(`${this.baseUrl}/identity`, { headers });
   }
 }
